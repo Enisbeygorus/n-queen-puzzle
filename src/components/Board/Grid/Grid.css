@@ -1,0 +1,19 @@
+.Grid {
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    text-align: center;
+    border: black;
+}
+
+.Light {
+    background-color: #ffce9e;
+}
+
+.Dark {
+    background-color: #505050
+}
+
+.Black {
+    background-color: #000
+}

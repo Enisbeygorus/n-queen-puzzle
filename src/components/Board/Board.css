@@ -1,0 +1,17 @@
+.Board {
+    width: 596px;
+    float: left;
+}
+
+.Board table {
+    border: 10px solid #999;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.Board tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}

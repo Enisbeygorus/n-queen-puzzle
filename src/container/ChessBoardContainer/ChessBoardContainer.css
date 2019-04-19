@@ -1,0 +1,36 @@
+.ChessBoardContainer{
+    background: #231f20;
+    width: 800px;
+    float: left;
+}
+
+.ChessBoardContainer table{
+   
+}
+
+.ChessBoardContainer tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.ChessBoardContainer tr{
+    text-align: -webkit-center;
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.ChessBoardContainer td{
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.ChessBoardContainerDiv {
+    font-family: courier;
+    font-size: 16px;
+    padding: 10px;
+    color: #ffffff;
+    width: 550px;
+    margin: auto;
+}
