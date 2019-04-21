@@ -1,34 +1,50 @@
-import React from 'react';
-import queen from '../../Assets/images/deneme2.png'
+import React, { Component } from "react";
+import queen from "../../Assets/images/deneme2.png";
 
-import classes from './Grid.css'
+import classes from "./Grid.css";
 
-const grid = (props) => {
+class Grid extends Component {
+  render() {
+    
 
-     let grid =
-      <td 
-         className={[classes.Grid, classes[props.gridType]].join(' ')}
-         onClick={props.clicked}
+    let grid = (
+      <td
+        className={[classes.Grid, classes[this.props.gridType]].join(" ")}
+        onClick={this.props.clicked}
       >
-             {/* <img 
-                src={queen} 
-                alt=""/> */}
+        {/* <img 
+                  src={queen} 
+                  alt=""/> */}
       </td>
+    );
 
-    if(props.span) {
-        console.log('asd')
-        grid =
-        <td className={[classes.Grid, classes[props.gridType]].join(' ')}>
-            <span style={{backgroundColor: "silver", height: '20px', width: '20px'}}>
-                <font color="black">{props.number} </font>
-            </span>
-        </td>
+
+
+    if(this.props.board[this.props.row][this.props.column] === 1) {
+        grid =  <td
+        className={[classes.Grid, classes[this.props.gridType]].join(' ')}
+        onClick={this.props.clicked} >
+           <img
+               src={queen}
+               alt=""/>
+     </td>
     }
-    return (
-        grid
-    )
+
+
+    if (this.props.span) {
+      grid = (
+        <td className={[classes.Grid, classes[this.props.gridType]].join(" ")}>
+          <span
+            style={{ backgroundColor: "silver", height: "20px", width: "20px" }}
+          >
+            <font color="black">{this.props.number} </font>
+          </span>
+        </td>
+      );
+    }
+
+    return grid;
+  }
 }
 
-export default grid;
-
-//[classes.Grid, classes[props.btnType]].join(' ')
+export default Grid;
