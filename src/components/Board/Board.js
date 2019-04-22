@@ -17,36 +17,118 @@ class Board extends Component {
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ],
-    queenPlacement: []
+    queenPlacement: [],
+    redQueens: []
   };
 
   componentDidUpdate() {
-
+    this.arrayOfRedQueens();
   }
+
+  arrayOfRedQueens = () => {
+    let tempArr = [];
+
+    if (this.state.queenPlacement.length >= 4) {
+      for (let i = 0; i < this.state.queenPlacement.length - 2; i += 2) {
+        for (let j = i + 2; j < this.state.queenPlacement.length; j += 2) {
+          if (this.state.queenPlacement[i] === this.state.queenPlacement[j]) {
+            tempArr.push(
+              this.state.queenPlacement[i],
+              this.state.queenPlacement[i + 1],
+              this.state.queenPlacement[j],
+              this.state.queenPlacement[j + 1]
+            );
+          }
+        }
+      }
+
+      for (let i = 1; i < this.state.queenPlacement.length - 2; i += 2) {
+        for (let j = i + 2; j < this.state.queenPlacement.length; j += 2) {
+          if (this.state.queenPlacement[i] === this.state.queenPlacement[j]) {
+            tempArr.push(
+              this.state.queenPlacement[i - 1],
+              this.state.queenPlacement[i],
+              this.state.queenPlacement[j - 1],
+              this.state.queenPlacement[j]
+            );
+          }
+        }
+      }
+
+      for (let i = 0; i < this.state.queenPlacement.length - 2; i += 2) {
+        for (let j = i + 2; j < this.state.queenPlacement.length; j += 2) {
+            for(let k = 1 ; k < 8; k++) {
+              if(this.state.queenPlacement[i] + k === this.state.queenPlacement[j] && this.state.queenPlacement[i + 1] + k === this.state.queenPlacement[j + 1]){
+                tempArr.push(
+                  this.state.queenPlacement[i],
+                  this.state.queenPlacement[i + 1],
+                  this.state.queenPlacement[j],
+                  this.state.queenPlacement[j + 1]
+                  )
+              }
+            }
+        }
+      }
+      for (let i = 0; i < this.state.queenPlacement.length - 2; i += 2) {
+        for (let j = i + 2; j < this.state.queenPlacement.length; j += 2) {
+            for(let k = 1 ; k < 8; k++) {
+              if(this.state.queenPlacement[i] - k === this.state.queenPlacement[j] && this.state.queenPlacement[i + 1] - k === this.state.queenPlacement[j + 1]){
+                tempArr.push(this.state.queenPlacement[i],
+                  this.state.queenPlacement[i + 1],
+                   this.state.queenPlacement[j],
+                    this.state.queenPlacement[j + 1]
+                    );
+              }
+            }
+        }
+      }
+
+      for (let i = 0; i < this.state.queenPlacement.length - 2; i += 2) {
+        for (let j = i + 2; j < this.state.queenPlacement.length; j += 2) {
+          if (Math.abs(this.state.queenPlacement[i] + this.state.queenPlacement[i+1]) === Math.abs(this.state.queenPlacement[j] + this.state.queenPlacement[j+1])) {
+            tempArr.push(
+              this.state.queenPlacement[i],
+              this.state.queenPlacement[i + 1],
+              this.state.queenPlacement[j],
+              this.state.queenPlacement[j + 1]
+            );
+          }
+        }
+      }
+
+      for (let i = tempArr.length - 1; i >= 2; i -= 2) {
+        for (let j = i - 2; j >= 0; j -= 2) {
+          if (tempArr.length <= 4) break;
+          if (tempArr[i] === tempArr[j] && tempArr[i - 1] === tempArr[j - 1]) {
+            tempArr.splice(i - 1, 2);
+          }
+        }
+      }
+    }
+    if (this.state.redQueens.toString() !== tempArr.toString()) {
+      console.log(tempArr)
+      this.setState({ redQueens: tempArr });
+    }
+  };
 
   queenPlacementHandler = (row, column) => {
     let tempArr = this.arrayClone(this.state.queenPlacement);
-    
 
-    console.log(tempArr)
+    console.log(tempArr);
 
     if (tempArr.toString() === "") {
-      console.log("insideee");
       tempArr.push(row, column);
       this.setState({ queenPlacement: tempArr });
     } else {
       for (let i = tempArr.length - 1; i >= 0; i -= 2) {
-        console.log(tempArr[i - 1],tempArr[i], column, row);
         if (tempArr[i] === column && tempArr[i - 1] === row) {
-          console.log(tempArr[i], tempArr[i - 1], "inside splice");
           tempArr.splice(i - 1, 2);
           this.setState({ queenPlacement: tempArr });
           return true;
         }
-      }  
-        
+      }
+
       for (let i = tempArr.length - 1; i >= 0; i -= 2) {
-        console.log(tempArr[i], tempArr[i - 1], "push");
         tempArr.push(row, column);
         this.setState({ queenPlacement: tempArr });
         return true;
@@ -99,6 +181,7 @@ class Board extends Component {
         key={i}
         row={i}
         queenPlacement={this.state.queenPlacement}
+        redQueens={this.state.redQueens}
       />
     ));
     return (

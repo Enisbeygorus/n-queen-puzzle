@@ -1,9 +1,10 @@
 .Grid {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     vertical-align: middle;
     text-align: center;
     border: black;
+    padding: 0px;
 }
 
 .Light {
@@ -16,4 +17,8 @@
 
 .Black {
     background-color: #000
+}
+
+.Red {
+    background-color: red
 }

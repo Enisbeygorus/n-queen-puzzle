@@ -19,6 +19,7 @@ class gridRow extends Component {
             column={i}
             queenPlacement={this.props.queenPlacement}
             board={this.props.board}
+            redQueens={this.props.redQueens}
           />
         );
       }
@@ -34,6 +35,7 @@ class gridRow extends Component {
             column={i}
             queenPlacement={this.props.queenPlacement}
             board={this.props.board}
+            redQueens={this.props.redQueens}
           />
         );
       }
@@ -49,6 +51,7 @@ class gridRow extends Component {
             column={i}
             queenPlacement={this.props.queenPlacement}
             board={this.props.board}
+            redQueens={this.props.redQueens}
           />
         );
       }
@@ -64,6 +67,7 @@ class gridRow extends Component {
             column={i}
             queenPlacement={this.props.queenPlacement}
             board={this.props.board}
+            redQueens={this.props.redQueens}
           />
         );
       }
@@ -77,6 +81,7 @@ class gridRow extends Component {
             column={i}
             queenPlacement={this.props.queenPlacement}
             board={this.props.board}
+            redQueens={this.props.redQueens}
           />
         );
       }
@@ -92,6 +97,7 @@ class gridRow extends Component {
               clicked={() => this.props.clicked(this.props.row, i)}
               queenPlacement={this.props.queenPlacement}
               board={this.props.board}
+              redQueens={this.props.redQueens}
             />
           );
         } else {
@@ -104,6 +110,7 @@ class gridRow extends Component {
               clicked={() => this.props.clicked(this.props.row, i)}
               queenPlacement={this.props.queenPlacement}
               board={this.props.board}
+              redQueens={this.props.redQueens}
             />
           );
         }
@@ -118,6 +125,7 @@ class gridRow extends Component {
               clicked={() => this.props.clicked(this.props.row, i)}
               queenPlacement={this.props.queenPlacement}
               board={this.props.board}
+              redQueens={this.props.redQueens}
             />
           );
         } else {
@@ -130,6 +138,7 @@ class gridRow extends Component {
               clicked={() => this.props.clicked(this.props.row, i)}
               queenPlacement={this.props.queenPlacement}
               board={this.props.board}
+              redQueens={this.props.redQueens}
             />
           );
         }
