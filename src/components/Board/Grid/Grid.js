@@ -65,7 +65,7 @@ class Grid extends Component {
           <span
             style={{ backgroundColor: "silver", height: "20px", width: "20px" }}
           >
-            <font color="black">{this.props.number} </font>
+            <font color="black">&nbsp;{this.props.number}&nbsp;</font>
           </span>
         </td>
       );

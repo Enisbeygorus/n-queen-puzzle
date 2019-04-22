@@ -4,9 +4,6 @@
     float: left;
 }
 
-.ChessBoardContainer table{
-   
-}
 
 .ChessBoardContainer tbody{
     display: table-row-group;
@@ -23,7 +20,12 @@
 
 .ChessBoardContainer td{
     display: table-cell;
-    vertical-align: inherit;
+}
+
+.ChessBoardContainerTd {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0px 0px 0px 40px
 }
 
 .ChessBoardContainerDiv {
