@@ -1,7 +1,11 @@
 .ChessBoardContainer{
-    background: #231f20;
+    background: #fff;
     width: 800px;
     float: left;
+}
+
+.ChessBoardContainerTable {
+    background: #eee
 }
 
 

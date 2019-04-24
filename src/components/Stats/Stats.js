@@ -1,23 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import classes from './Stats.css'
+import classes from "./Stats.css";
 
-const stats = (props) => {
+let alphabet = 'abcdefgh'
 
+const stats = props => {
 
-    return (
-        
-            <div className={classes.Stats}>
-                <p>Information</p>
-                <p>&nbsp;</p>
+    let queenList = []
 
-                <h4>Queen's Locations</h4>   
-                <ol>
+    for(let i = 0; i < props.queenPlacement.length; i+=2){
+        let list = <li></li>
+        list = <li key={i}>Q{alphabet[props.queenPlacement[i+1] - 1]}{9 - props.queenPlacement[i]}</li>
+        queenList.push(list)
+    }
 
-                </ol>
-            </div>
-        
-    )
-}
+  return (
+    <div className={classes.Stats}>
+      <p>Information</p>
+      <p>&nbsp;</p>
 
-export default stats
+      <h4>Queen's Locations</h4>
+      <ol>
+          {queenList}
+      </ol>
+    </div>
+  );
+};
+
+export default stats;

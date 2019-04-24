@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom' 
 import Layout from './components/Layout/Layout'
 import ChessBoardContainer from './container/ChessBoardContainer/ChessBoardContainer'
 
@@ -10,7 +11,7 @@ class App extends Component {
     return (
         <div className={classes.App}>
              <Layout>
-                  <ChessBoardContainer />
+                  <Route path="/" exact component={ChessBoardContainer}/>
              </Layout>       
         </div>
     );

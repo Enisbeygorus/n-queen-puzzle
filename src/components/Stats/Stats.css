@@ -2,7 +2,7 @@
     width: 200px;
     float: left;
     margin: 15px 0;
-    color: white
+    color: #000
 }
 
 .Stats p{
@@ -20,6 +20,12 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid gray
     
+}
+
+.Stats li{
+    margin: 15px 0;
 }
 

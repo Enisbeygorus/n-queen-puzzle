@@ -4,8 +4,6 @@ import GridRow from "./GridRow/GridRow";
 import classes from "./Board.css";
 
 class Board extends Component {
-  
-
   render() {
     let fullBoard = Array.from(Array(10).keys()).map(i => (
       <GridRow

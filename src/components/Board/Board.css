@@ -4,6 +4,7 @@
 }
 
 .Board table {
+    background: #231f20;
     border: 10px solid #999;
     display: table;
     border-collapse: separate;
