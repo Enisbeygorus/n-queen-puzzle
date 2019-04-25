@@ -220,6 +220,7 @@ class ChessBoardContainer extends Component {
 
   render() {
     return (
+      <div className={classes.ChessBoardContainerLayout}>
       <div className={classes.ChessBoardContainer}>
         <table className={classes.ChessBoardContainerTable}>
           <tbody>
@@ -242,6 +243,7 @@ class ChessBoardContainer extends Component {
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
     );
   }
