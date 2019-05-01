@@ -7,7 +7,11 @@ import Green from "../../Assets/images/Green.png";
 import classes from "./Grid.css";
 
 class Grid extends Component {
+  
+  
+
   render() {
+
     let grid = (
       <td
         className={[classes.Grid, classes[this.props.gridType]].join(" ")}
@@ -101,6 +105,30 @@ class Grid extends Component {
         };
       };
     };
+
+    
+
+    if(this.props.small === "Small") {   
+            grid = (
+              <td
+              className={[classes.Grid, classes[this.props.gridType], classes[this.props.small]].join(" ")}
+            />
+            )
+
+            for(let i = 0 ; i < this.props.solutionArray.length; i++) {
+              if(this.props.solutionArray[i] === this.props.row - 1 && i === this.props.column - 1 ){
+                grid = (
+                  <td
+                  className={[classes.Grid, classes["Red"], classes[this.props.small]].join(" ")}           
+                />
+                )
+              }
+              
+              
+            }
+
+    }
+
 
     return grid;
   };

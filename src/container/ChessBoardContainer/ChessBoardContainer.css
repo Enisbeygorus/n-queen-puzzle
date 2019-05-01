@@ -5,9 +5,16 @@
 }
 
 .ChessBoardContainer{
-    background: #fff;
+    background: #eee;
     width: 800px;
     float: left;
+    margin: 15px auto;
+}
+
+.ChessBoardContainer h3{
+    margin: 40px 0px 40px 125px;
+    border-bottom: 1px solid black;
+    padding: 5px 0px;
 }
 
 .ChessBoardContainerTable {
@@ -45,4 +52,11 @@
     color: #ffffff;
     width: 550px;
     margin: auto;
+}
+
+.SolutionDiv {
+    float: left;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 5% 13%;
 }

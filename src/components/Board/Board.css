@@ -16,3 +16,23 @@
     vertical-align: middle;
     border-color: inherit;
 }
+
+.BoardSmall {
+    width: 15%;
+    float: left;
+    margin: 5px 5px
+}
+
+.BoardSmall table {
+    background: #231f20;
+    border: 4px solid #999;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.BoardSmall tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}

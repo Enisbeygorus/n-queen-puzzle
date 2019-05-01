@@ -1,5 +1,6 @@
 .Layout {
     margin: 0 auto;
     background: #231f20;
-    margin-top: 72px 
+    margin-top: 72px;
+    box-sizing: border-box;
 }

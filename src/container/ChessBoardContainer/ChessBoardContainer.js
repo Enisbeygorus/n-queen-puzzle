@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import Board from "../../components/Board/Board";
 import Stats from "../../components/Stats/Stats";
+import { queenPuzzle } from '../../components/QueenAlgorithm'
+
+import Solution14 from '../../components/Assets/images/Solution14.png'
+import Solution58 from '../../components/Assets/images/Solution58.png'
+import Solution912 from '../../components/Assets/images/Solution912.png'
 
 import classes from "./ChessBoardContainer.css";
+
+const queenPuzzleSolution = queenPuzzle(8,8)
 
 class ChessBoardContainer extends Component {
   state = {
@@ -139,7 +146,6 @@ class ChessBoardContainer extends Component {
       }
     }
     if (this.state.redQueens.toString() !== tempArr.toString()) {
-      console.log(tempArr);
       this.setState({ redQueens: tempArr });
     }
   };
@@ -219,7 +225,10 @@ class ChessBoardContainer extends Component {
   };
 
   render() {
+
+
     return (
+      <React.Fragment>
       <div className={classes.ChessBoardContainerLayout}>
       <div className={classes.ChessBoardContainer}>
         <table className={classes.ChessBoardContainerTable}>
@@ -243,8 +252,20 @@ class ChessBoardContainer extends Component {
             </tr>
           </tbody>
         </table>
+        <h3>All 12 Unique Solutions for 8x8 board</h3>  
       </div>
       </div>
+      <div className={classes.ChessBoardContainer}>
+        <img src={Solution14} alt=""/>
+      </div>   
+      <div className={classes.ChessBoardContainer}>
+        <img src={Solution58} alt=""/>
+      </div>   
+      <div className={classes.ChessBoardContainer}>
+        <img src={Solution912} alt=""/>
+      </div>   
+      </React.Fragment>
+
     );
   }
 }
