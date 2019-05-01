@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Chessboard8Queen from "../../components/Assets/images/Chessboard8Queen.png";
 import nBoard from "../../components/Assets/images/nBoard.png";
+import MathModel from "../../components/Assets/images/MathModel.png";
 import HistoryChess from "../../components/Assets/images/HistoryChess.jpg";
 import QueensAnimation from "../../components/Assets/images/Queens-Animation.gif";
 
@@ -127,21 +128,33 @@ class MainMenu extends Component {
             <div className={classes.MainMenuMainSection1Div1}>
               <h2>Solutions</h2>
             </div>
-            <div className={classes.MainMenuMainSection1Div2} >
+            <div className={classes.MainMenuMainSection1Div2}>
               <div className={classes.MainMenuMainSection1Div2Div1}>
                 <h3>N Size Board</h3>
-                <p style={{width: '600px'}}>It's very easy to expand (and contract) this puzzle to other sized chess boards.
-To the right is a table of the number of solutions for different sized n x n boards.
-For each size board I've shown the number of total solutions, and also the number of distinct types of solutions (unique before rotations and reflections).
-Trivially, there is only one solution for a 1 x 1 board, and it's not hard to see that there are no possible solutions for a 2 x 2 or 3 x 3 sized board.
-It's interesting that, whilst there are 10 solutions to a 5 x 5 board, the number of solutions drops to just 4 solutions on a 6 x 6 board.
-
-There is (currently) no known formula for determining the number possible solutions for an n x n board, and an internet search reveals that the highest calculated board size to-date is 26 x 26.
-</p>
+                <p style={{ width: "600px" }}>
+                  It's very easy to expand (and contract) this puzzle to other
+                  sized chess boards. To the right is a table of the number of
+                  solutions for different sized n x n boards. For each size
+                  board I've shown the number of total solutions, and also the
+                  number of distinct types of solutions (unique before rotations
+                  and reflections). Trivially, there is only one solution for a
+                  1 x 1 board, and it's not hard to see that there are no
+                  possible solutions for a 2 x 2 or 3 x 3 sized board. It's
+                  interesting that, whilst there are 10 solutions to a 5 x 5
+                  board, the number of solutions drops to just 4 solutions on a
+                  6 x 6 board. There is (currently) no known formula for
+                  determining the number possible solutions for an n x n board,
+                  and an internet search reveals that the highest calculated
+                  board size to-date is 26 x 26.
+                </p>
               </div>
               <div style={{ position: "relative" }}>
                 <img src={nBoard} alt="" />
               </div>
+            </div>
+            <div className={classes.MainMenuMainSection1Div1}>
+             <h2 style={{margin: '60px'}}>MATHEMATICAL MODEL</h2>
+             <img src={MathModel} alt="" />
             </div>
           </section>
         </main>
